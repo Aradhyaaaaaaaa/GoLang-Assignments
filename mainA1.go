@@ -20,7 +20,7 @@ func checkforvote(P *Person){
         fmt.Println("No this person can not vote")
     }
 }
-func (P Person) UpdateAge(){//This will pass a copy of it
+func (P Person) UpdateAge(){ //This will pass a copy of it
 	P.Age = 21
 	fmt.Println("Updated age of this user is", P.Age)
 }
@@ -34,9 +34,6 @@ func main() {
 
 	fmt.Println("Enter Gender:") //user input for gender
 	fmt.Scanln(&person.Gender)
-
-	//fmt.Println("Do you vote:")
-	//fmt.Scanln(&person.Vote)
 
 	fmt.Println("Person's Details:", person)
 	person.Introduction()
