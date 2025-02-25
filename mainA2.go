@@ -49,14 +49,13 @@ func (dep *Department) AvrageSalary(){
 
 func (dep * Department) Raise(){
 	var empID int
-	fmt.Printf("Name the employee whom you want to give raise")
+	fmt.Printf("ID of a employee whom you want to give raise")
 	_, err := fmt.Scanln(&empID)
 	if err != nil{
 		fmt.Println("Error",err)
 	}
 }
 func (Dep *Department) AddEmp(){
-    // newEmp := []Employee{}
 	newEmp := Employeesdetails()
 	age, _ := strconv.Atoi(newEmp[1])//this will convertstring to int
 	salary, _ := strconv.Atoi(newEmp[2])
@@ -77,7 +76,7 @@ func (Dep *Department) AddEmp(){
 	// fmt.Println(newEmp)
 }
 
-func main1(){
+func main(){
 	//creating a department
 	Department1 := Department{Name: "Golnang", Employees:[]Employee{
 			{"ABC", 24, 565, 50000},
