@@ -1,3 +1,4 @@
+//employee have to me map,
 package main
 
 import (
@@ -11,10 +12,13 @@ type Employee struct {
 	Id     int
 	Salary int
 }
+
 type Department struct{
 	Name   string
-	Employees []Employee//this allow us to store multiple employees in single department
+	Employees map[int]Employee//this allow us to store multiple employees in single department map int
+
 }
+
 func Employeesdetails() []string{ 
 	var Name string
 	fmt.Println("Enter employee's name:") //user input for name
@@ -55,6 +59,7 @@ func (dep * Department) Raise(){
 		fmt.Println("Error",err)
 	}
 }
+
 func (Dep *Department) AddEmp(){
 	newEmp := Employeesdetails()
 	age, _ := strconv.Atoi(newEmp[1])//this will convertstring to int
@@ -76,7 +81,7 @@ func (Dep *Department) AddEmp(){
 	// fmt.Println(newEmp)
 }
 
-func main(){
+func main1(){
 	//creating a department
 	Department1 := Department{Name: "Golnang", Employees:[]Employee{
 			{"ABC", 24, 565, 50000},
